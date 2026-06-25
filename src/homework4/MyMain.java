@@ -49,7 +49,7 @@ public class MyMain {
         getAmountZeroElements(array);
         System.out.println("-".repeat(50));
         System.out.println("Task 5");
-        //swapVariable(array);
+        swapVariable(array);
         System.out.println("-".repeat(50));
         System.out.println("Task 6");
         isIncreasing(array);
@@ -142,18 +142,30 @@ public class MyMain {
 
     public static void addOne(int[] array) {
         System.out.println("Original array is: " + Arrays.toString(array));
-        for (int index = array.length -1; index >= 0; index--) {
-             if (array[index] <9) {
-                 array[index]++;
-                 break;
-             }
-             array[index] = 0;
+        int lastIndex = array.length - 1;
+        if (array[lastIndex] != 9) {
+            array[lastIndex] = array[lastIndex] + 1;
+            System.out.println("Modified array: " + Arrays.toString(array));
+        } else {
+            boolean allNines = true;
+            for (int index = 0; index < array.length; index++) {
+                if (array[index] != 9) {
+                    allNines = false;
+                    break;
+                }
+            }
+            if (allNines) {
+                int[] newArray = new int[array.length + 1];
+                newArray[0] = 1;
+                newArray[newArray.length - 1] = 0;
+                System.out.println("Modified array: " + Arrays.toString(newArray));
+            } else {
+                array[array.length - 2] = array[array.length -2] + 1;
+                array[lastIndex] = 0;
+                System.out.println("Modified array: " + Arrays.toString(array));
+            }
         }
-        System.out.println("After adding a unit to the array " + Arrays.toString(array));
 
-        int[] newArray = new int[array.length + 1];
-        newArray[0] = 1;
-        System.out.println("After adding a unit to the array " + Arrays.toString(newArray));
     }
 
     public static Scanner getInput(){
