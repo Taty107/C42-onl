@@ -24,7 +24,7 @@ public class CreditCard {
 
     public void creditMoney(){
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter the amount you want to withdraw from your balance: ");
+        System.out.print("Enter the amount you want to top up from your balance: ");
         double amount = input.nextDouble();
         if (amount > 0) {
             initialAmount += amount;

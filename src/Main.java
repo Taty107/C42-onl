@@ -18,79 +18,75 @@ public class Main {
     }
 
     public static void carryOutTransactions(CreditCard cardOne, CreditCard cardTwo, CreditCard cardThree) {
-        System.out.println("Hi! Please select which operation you want to perform:"
-                             + "\n 1. Check balance"
-                             + "\n 2. Top up your balance"
-                             + "\n 3. Withdraw money")
-        ;
-        int choice = getInput().nextInt();
-
+        boolean isRan = true;
         do{
-            if (choice == 1) {
-                System.out.println("Which card do you want to check the balance on?"
-                        + "\n Card One"
-                        + "\n Card Two"
-                        + "\n Card Three")
-                ;
-                String nameCard = getInput().nextLine();
-                switch (nameCard) {
-                    case "Card One":
+            System.out.println("Hi! Please select which operation you want to perform:"
+                    + "\n 1. Check balance"
+                    + "\n 2. Top up your balance"
+                    + "\n 3. Withdraw money"
+                    + "\n 4. Log out ")
+            ;
+            int choice = getInput().nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Which card do you want to check the balance on?"
+                            + "\n 1. Card One"
+                            + "\n 2. Card Two"
+                            + "\n 3. Card Three")
+                    ;
+                    int numCard = getInput().nextInt();
+                    if (numCard == 1) {
                         System.out.println(cardOne.accountNumber + " card balance " + cardOne.initialAmount);
-                        break;
-                    case "Card Two":
+                    } else if (numCard == 2) {
                         System.out.println(cardTwo.accountNumber + " card balance " + cardTwo.initialAmount);
-                        break;
-                    case "Card Three":
+                    } else if (numCard == 3) {
                         System.out.println(cardThree.accountNumber + " card balance " + cardThree.initialAmount);
-                        break;
-                    default:
-                        System.out.println("The card name is incorrect!");
-                }
-            } else if (choice == 2) {
-                System.out.println("Which card do you want to top up?"
-                        + "\n Card One"
-                        + "\n Card Two"
-                        + "\n Card Three")
-                ;
-                String nameCard = getInput().nextLine();
-                 switch (nameCard) {
-                     case "Card One":
-                         cardOne.creditMoney();
-                         break;
-                     case "Card Two":
-                         cardTwo.creditMoney();
-                         break;
-                     case "Card Three":
-                         cardThree.creditMoney();
-                         break;
-                     default:
-                         System.out.println("The card name is incorrect!");
-                 }
-            } else if (choice == 3) {
-                System.out.println("Which card do you want to top up?"
-                        + "\n Card One"
-                        + "\n Card Two"
-                        + "\n Card Three")
-                ;
-                String nameCard = getInput().nextLine();
-                switch (nameCard) {
-                    case "Card One":
+                    } else {
+                        System.out.println("Error! The selected card does not exist!");
+                    }
+                    break;
+                case 2:
+                    System.out.println("Which card do you want to top up?"
+                            + "\n 1. Card One"
+                            + "\n 2. Card Two"
+                            + "\n 3. Card Three")
+                    ;
+                    numCard = getInput().nextInt();
+                    if (numCard == 1) {
+                        cardOne.creditMoney();
+                    } else if (numCard == 2) {
+                        cardTwo.creditMoney();
+                    } else if (numCard == 3) {
+                        cardThree.creditMoney();
+                    } else {
+                        System.out.println("Error! The selected card does not exist!");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Which card do you want to withdraw money?"
+                            + "\n 1. Card One"
+                            + "\n 2. Card Two"
+                            + "\n 3. Card Three")
+                    ;
+                    numCard = getInput().nextInt();
+                    if (numCard == 1) {
                         cardOne.withdrawMoney();
-                        break;
-                    case "Card Two":
+                    } else if (numCard == 2) {
                         cardTwo.withdrawMoney();
-                        break;
-                    case "Card Three":
+                    } else if (numCard == 3) {
                         cardThree.withdrawMoney();
-                        break;
-                    default:
-                        System.out.println("The card name is incorrect!");
-                }
-            } else if (choice <= 0) {
-                System.out.println("Error!! Select correct operation!");
-                break;
+                    } else {
+                        System.out.println("Error! The selected card does not exist!");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Thank you for using our ATM. I wish you well!");
+                    isRan = false;
+                    break;
+                default:
+                    System.out.println("Invalid menu item. Try again!");
             }
-        } while(true);
+        } while(isRan);
     }
 
     public static Scanner getInput(){
