@@ -1,3 +1,4 @@
+import homework6.ATMHomework;
 import homework6.CreditCard;
 
 import java.util.Scanner;
@@ -15,6 +16,16 @@ public class Main {
         cardThree.accountNumber = "56565656";
         cardThree.initialAmount = 4520.5;
         carryOutTransactions(cardOne, cardTwo, cardThree);
+
+        System.out.println("*".repeat(80));
+
+        ATMHomework cashMachine = new ATMHomework();
+        cashMachine.balance = 30476;
+        cashMachine.banknotesTwenty = 100;
+        cashMachine.banknotesFifty = 100;
+        cashMachine.banknotesHundred = 100;
+        cashMachine.addingMoney();
+        cashMachine.getMoney();
     }
 
     public static void carryOutTransactions(CreditCard cardOne, CreditCard cardTwo, CreditCard cardThree) {
@@ -27,6 +38,7 @@ public class Main {
                     + "\n 4. Log out ")
             ;
             int choice = getInput().nextInt();
+            int numCard;
             switch (choice) {
                 case 1:
                     System.out.println("Which card do you want to check the balance on?"
@@ -34,13 +46,13 @@ public class Main {
                             + "\n 2. Card Two"
                             + "\n 3. Card Three")
                     ;
-                    int numCard = getInput().nextInt();
+                    numCard = getInput().nextInt();
                     if (numCard == 1) {
-                        System.out.println(cardOne.accountNumber + " card balance " + cardOne.initialAmount);
+                        cardOne.displayInformation();
                     } else if (numCard == 2) {
-                        System.out.println(cardTwo.accountNumber + " card balance " + cardTwo.initialAmount);
+                        cardTwo.displayInformation();
                     } else if (numCard == 3) {
-                        System.out.println(cardThree.accountNumber + " card balance " + cardThree.initialAmount);
+                        cardThree.displayInformation();
                     } else {
                         System.out.println("Error! The selected card does not exist!");
                     }
@@ -80,7 +92,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.println("Thank you for using our ATM. I wish you well!");
+                    System.out.println("Thank you. I wish you well!");
                     isRan = false;
                     break;
                 default:
