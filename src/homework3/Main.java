@@ -28,7 +28,7 @@ public class Main {
         int t = input.nextInt();
         if (t > -5) {
             System.out.println("Warm");
-        } else if (-20 >= t) {
+        } else if (t >= -20) {
             System.out.println("Cold");
         } else if ((t <= -5) && (t > -20)) {
             System.out.println("Normal");

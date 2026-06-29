@@ -47,11 +47,11 @@ public class MyMain {
                     ;
                     numCard = getInput().nextInt();
                     if (numCard == 1) {
-                        cardOne.displayInformation();
+                        System.out.println(cardOne.getDisplayInformation());
                     } else if (numCard == 2) {
-                        cardTwo.displayInformation();
+                        System.out.println(cardTwo.getDisplayInformation());
                     } else if (numCard == 3) {
-                        cardThree.displayInformation();
+                        System.out.println(cardThree.getDisplayInformation());
                     } else {
                         System.out.println("Error! The selected card does not exist!");
                     }

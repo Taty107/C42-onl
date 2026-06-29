@@ -6,8 +6,9 @@ public class CreditCard {
     public String accountNumber;
     public double initialAmount;
 
-    public void displayInformation(){
-        System.out.println("Current card " + accountNumber + " balance is: " + initialAmount);
+    public String getDisplayInformation(){
+        return "On the card number " + accountNumber +
+                "\tbalance is: " + initialAmount;
     }
 
     public void withdrawMoney(){
