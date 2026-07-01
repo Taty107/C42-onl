@@ -1,6 +1,6 @@
 package homework7;
 
-public class Therapist extends Doctor {
+public class Therapist extends homework7.Doctor {
     private String nameTherapist = "Ivanov G.V.";
 
     @Override
@@ -8,7 +8,7 @@ public class Therapist extends Doctor {
         System.out.println("You are being treated by a therapist " + getName());
     }
 
-    public void appointDoctor(Patient patient, Dentist dentist, Surgeon surgeon, Therapist therapist) {
+    public void appointDoctor(homework7.Patient patient, homework7.Dentist dentist, homework7.Surgeon surgeon, Therapist therapist) {
         System.out.println("The therapist appoints a doctor in accordance with his treatment plan.");
         int plan = patient.getTreatmentPlan();
         if (plan == 1) {

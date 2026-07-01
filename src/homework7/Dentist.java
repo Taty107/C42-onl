@@ -1,6 +1,6 @@
 package homework7;
 
-public class Dentist extends Doctor {
+public class Dentist extends homework7.Doctor {
 
     private String nameDentist = "Korotkova D.A.";
 

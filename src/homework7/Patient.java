@@ -2,7 +2,7 @@ package homework7;
 
 public class Patient {
     private String namePatient;
-    private Doctor doctor;
+    private homework7.Doctor doctor;
     private int treatmentPlan;
 
     public  Patient (String namePatient, int treatmentPlan) {
