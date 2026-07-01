@@ -5,18 +5,21 @@ public class Therapist extends Doctor {
 
     @Override
     public void treatPatient() {
-        System.out.println("You are being treated by a therapist" + getName());
+        System.out.println("You are being treated by a therapist " + getName());
     }
 
-    public void appointDoctor(Patient patient, Dentist dentist, Surgeon surgeon) {
+    public void appointDoctor(Patient patient, Dentist dentist, Surgeon surgeon, Therapist therapist) {
         System.out.println("The therapist appoints a doctor in accordance with his treatment plan.");
         int plan = patient.getTreatmentPlan();
         if (plan == 1) {
             patient.assignDoctor(surgeon);
+            surgeon.treatPatient();
         } else if (plan == 2) {
             patient.assignDoctor(dentist);
+            dentist.treatPatient();
         } else {
-            patient.assignDoctor(this);
+            patient.assignDoctor(therapist);
+            therapist.treatPatient();
         }
     }
 

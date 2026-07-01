@@ -18,4 +18,9 @@ public class Patient {
         return treatmentPlan;
     }
 
+    public String toString(){
+        return "Patient " + namePatient +
+                " has code of treatment plan is " + treatmentPlan;
+    }
+
 }
