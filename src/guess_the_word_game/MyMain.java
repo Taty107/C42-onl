@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 public class MyMain {
     public static void main(String[] args) {
+        createGame();
+    }
+
+    public static void createGame(){
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
         String[] word = new String[]{
                 "Приключение",
                 "Бронирование",
@@ -29,52 +35,73 @@ public class MyMain {
                 "Компас",
                 "Палатка",
                 "Странствие"};
-        Random random = new Random();
-        int randomIndex = random.nextInt(word.length);
-        String randomWord = word[randomIndex].toLowerCase();
-        createGame(randomWord);
-    }
+        boolean playAAgain;
 
-    public static void createGame(String randomWord){
-        int numberTry = 5;
-        char[] guessWord = new char[randomWord.length()];
-        Arrays.fill(guessWord, '*');
-        System.out.println("Добро пожаловать в игру 'Угадай Слово'!");
-        System.out.println("Тема загаданого слова 'ПУТЕШЕСТВИЕ'!");
-        System.out.println("И вот твоя первая подсказка.");
-        System.out.println("В загаданом слове " + randomWord.length() + " букв.");
+        do {
+            int randomIndex = random.nextInt(word.length);
+            String randomWord = word[randomIndex].toLowerCase();
+            int numberTry = 5;
+            char[] guessWord = new char[randomWord.length()];
+            Arrays.fill(guessWord, '*');
 
-        while (numberTry > 0) {
-            System.out.println("Слово сейчас: " + String.valueOf(guessWord));
-            System.out.println("У вас осталось " + numberTry + " попыток");
-            System.out.print("Пожалуйста введите букву: ");
-            char guessLetter = getInput().next().toLowerCase().charAt(0);
-            boolean foundAny = false;
-            for (int index = 0; index < randomWord.length(); index++) {
-                if (randomWord.charAt(index) == guessLetter) {
-                    guessWord[index] = guessLetter;
-                    foundAny = true;
+            System.out.println("Добро пожаловать в игру 'Угадай Слово'!");
+            System.out.println("Тема загаданого слова 'ПУТЕШЕСТВИЕ'!");
+            System.out.println("И вот ваша первая подсказка.");
+            System.out.println("В загаданом слове " + randomWord.length() + " букв.");
+
+            while (numberTry > 0) {
+                System.out.println("~".repeat(100));
+                System.out.println("Слово сейчас: " + String.valueOf(guessWord));
+                System.out.println("У вас осталось " + numberTry + " попыток");
+                System.out.print("Пожалуйста введите слово целиком или одну букву: ");
+
+                String tryGuessWord = input.nextLine().toLowerCase();
+
+                System.out.println();
+
+                if (tryGuessWord.length() > 1) {
+                    if (tryGuessWord.equals(randomWord)) {
+                        guessWord = randomWord.toCharArray();
+                        System.out.println("Отлично! Вы угадали слово целиком " + randomWord);
+                        break;
+                    } else {
+                        numberTry--;
+                        System.out.println("Нет, слово не верно!");
+                        System.out.println("У вас осталось " + numberTry + " попыток.");
+                    }
+                } else if (tryGuessWord.length() == 1) {
+                    char guessLetter = tryGuessWord.charAt(0);
+                    boolean foundLetter = false;
+                    for (int index = 0; index < randomWord.length(); index++) {
+                        if (randomWord.charAt(index) == guessLetter) {
+                            guessWord[index] = guessLetter;
+                            foundLetter = true;
+                        }
+                    }
+                    if (foundLetter) {
+                        System.out.println("Буква " + guessLetter + " найдена.");
+                    } else {
+                        numberTry--;
+                        System.out.println("Такой буквы в слове нет.");
+                        System.out.println("У вас осталось " + numberTry + " попыток.");
+                        System.out.println("~".repeat(100));
+                    }
                 }
-            }
-            if (foundAny) {
-                System.out.println("Буква " + guessLetter + " найдена.");
-            } else {
-                System.out.println("Такой буквы в слове нет. Попробуйте еще раз.");
-                numberTry--;
-            }
-            if (!String.valueOf(guessWord).contains("*")) {
-                System.out.println("Поздравляем вы победили!");
-                break;
+                if (!String.valueOf(guessWord).contains("*")) {
+                    System.out.println("Поздравляем вы победили!");
+                    break;
+                }
             }
             if (numberTry == 0) {
                 System.out.println("Игра окончена!");
                 System.out.println("Загаданное слово " + randomWord);
             }
-        }
 
-    }
-
-    public static Scanner getInput() {
-        return new Scanner(System.in);
+            System.out.println("Хотите начать игру заново?(да/нет)");
+            String answer = input.nextLine().toLowerCase();
+            playAAgain = answer.equals("да");
+        } while (playAAgain);
+        System.out.println("Спасибо за игру!");
     }
 }
+
