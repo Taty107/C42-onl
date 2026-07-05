@@ -84,18 +84,20 @@ public class MyMain {
                         numberTry--;
                         System.out.println("Такой буквы в слове нет.");
                         System.out.println("У вас осталось " + numberTry + " попыток.");
-                        System.out.println("~".repeat(100));
                     }
                 }
+                System.out.println("~".repeat(100));
                 if (!String.valueOf(guessWord).contains("*")) {
                     System.out.println("Поздравляем вы победили!");
                     break;
                 }
             }
+            System.out.println("~".repeat(100));
             if (numberTry == 0) {
                 System.out.println("Игра окончена!");
                 System.out.println("Загаданное слово " + randomWord);
             }
+            System.out.println("~".repeat(100));
 
             System.out.println("Хотите начать игру заново?(да/нет)");
             String answer = input.nextLine().toLowerCase();
