@@ -1,6 +1,6 @@
 package homework9.task1;
 
-public abstract class Employee {
+public abstract class Employee implements PrintJob{
     private final String jobTitle;
     private final String name;
 
@@ -9,14 +9,11 @@ public abstract class Employee {
         this.name = name;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public String getName() {
+        return name;
     }
 
-    public abstract void printJobTitle();
-
-    @Override
-    public String toString() {
-        return "This employee`s name is " + name + ". He is " + jobTitle;
+    public String getJobTitle() {
+        return jobTitle;
     }
 }

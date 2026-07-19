@@ -10,7 +10,7 @@ public class Circle extends Figure{
     @Override
     public double getPerimeter() {
         double perimeterCircle = 2 * Math.PI * radius;
-        System.out.println("Perimeter of circle " + perimeterCircle);
+        System.out.printf("Perimeter of circle %.2f%n", perimeterCircle);
         return perimeterCircle;
     }
 

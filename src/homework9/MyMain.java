@@ -20,17 +20,14 @@ public class MyMain {
     }
 
     public static void getJobTitle(){
-        Employee employee1 = new Director("director", "John");
-        Employee employee2 = new Accountant("accountant", "Irina");
-        Employee employee3 = new Worker("general worker", "Boris");
-
-        System.out.println();
-        employee1.printJobTitle();
+        Employee employee1 = new Director("Kirill");
+        Employee employee2 = new Accountant("Irina");
+        Employee employee3 = new Worker("Boris");
+        employee3.printJobTitle();
         System.out.println("~".repeat(60));
         employee2.printJobTitle();
         System.out.println("~".repeat(60));
-        System.out.println(employee3);
-        System.out.println("~".repeat(60));
+        employee1.printJobTitle();
     }
 
     public static void getSumAllPerimeter(){
@@ -46,6 +43,6 @@ public class MyMain {
             sumPerimeter += figure.getPerimeter();
         }
         System.out.println();
-        System.out.println("The sum of the perimeter of all figures is " + sumPerimeter);
+        System.out.printf("The sum of the perimeter of all figures is %.2f%n", sumPerimeter);
     }
 }
