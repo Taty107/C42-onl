@@ -1,22 +1,18 @@
 package homework9;
 
-import homework9.task1.Accountant;
-import homework9.task1.Director;
-import homework9.task1.Employee;
-import homework9.task1.Worker;
-import homework9.task2.Circle;
-import homework9.task2.Figure;
-import homework9.task2.Rectangle;
-import homework9.task2.Triangle;
+import homework9.task1.*;
+import homework9.task2.*;
 
 public class MyMain {
     public static void main(String[] args){
         System.out.println("Task 1");
         getJobTitle();
-
-        System.out.println();
+        System.out.println("^".repeat(50));
         System.out.println("Task 2");
         getSumAllPerimeter();
+        System.out.println("^".repeat(50));
+        System.out.println("Task*");
+        cloneSuperficiallyObject();
     }
 
     public static void getJobTitle(){
@@ -44,5 +40,16 @@ public class MyMain {
         }
         System.out.println();
         System.out.printf("The sum of the perimeter of all figures is %.2f%n", sumPerimeter);
+    }
+
+    public static void cloneSuperficiallyObject(){
+        try {
+            Accountant accountant = new Accountant("Artyom");
+            Accountant cloneAccountant = (Accountant) accountant.clone();
+            System.out.println("This is original accountant: " + accountant);
+            System.out.println("And this is his clone: " + cloneAccountant);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -11,7 +11,6 @@ public class Triangle extends Figure{
         this.sideTriangleC = sideTriangleC;
     }
 
-
     @Override
     public double getPerimeter() {
         int perimeterTriangle = sideTriangleA + sideTriangleB + sideTriangleC;

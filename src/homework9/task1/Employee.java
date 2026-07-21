@@ -8,12 +8,16 @@ public abstract class Employee implements PrintJob{
         this.jobTitle = jobTitle;
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
-
     public String getJobTitle() {
         return jobTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee name is " + name
+                + "\nHe is " + jobTitle;
     }
 }
