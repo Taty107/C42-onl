@@ -2,8 +2,8 @@ package homework9.task1;
 
 public class Director extends Employee {
 
-    public Director(String name) {
-        super("Director", name);
+    public Director(String name, int age) {
+        super("Director", name, age);
     }
 
     @Override

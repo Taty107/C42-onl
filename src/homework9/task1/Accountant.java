@@ -1,19 +1,15 @@
 package homework9.task1;
 
 public class Accountant extends Employee implements Cloneable {
-    public Accountant(String name) {
-        super("Accountant", name);
+    public Accountant(String name, int age) {
+        super("Accountant", name, age);
     }
     @Override
     public void printJobTitle() {
-        System.out.println("My name is " + getName() + " I am " + getJobTitle());
+        System.out.println("My name is " + getName() + " my age is " + getAge() + " I am " + getJobTitle());
     }
     @Override
-    public Accountant clone() {
-        try {
-            return (Accountant) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
+    public Accountant clone() throws CloneNotSupportedException {
+        return (Accountant) super.clone();
     }
 }

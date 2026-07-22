@@ -6,19 +6,19 @@ import homework9.task2.*;
 public class MyMain {
     public static void main(String[] args){
         System.out.println("Task 1");
-        getJobTitle();
+        //getJobTitle();
         System.out.println("^".repeat(50));
         System.out.println("Task 2");
-        getSumAllPerimeter();
+        //getSumAllPerimeter();
         System.out.println("^".repeat(50));
         System.out.println("Task*");
-        cloneSuperficiallyObject();
+        cloneShallowObject();
     }
 
     public static void getJobTitle(){
-        Employee employee1 = new Director("Kirill");
-        Employee employee2 = new Accountant("Irina");
-        Employee employee3 = new Worker("Boris");
+        Employee employee1 = new Director("Kirill", 54);
+        Employee employee2 = new Accountant("Irina", 22);
+        Employee employee3 = new Worker("Boris", 33);
         employee3.printJobTitle();
         System.out.println("~".repeat(60));
         employee2.printJobTitle();
@@ -42,14 +42,18 @@ public class MyMain {
         System.out.printf("The sum of the perimeter of all figures is %.2f%n", sumPerimeter);
     }
 
-    public static void cloneSuperficiallyObject(){
+    public static void cloneShallowObject(){
+        Accountant accountant = new Accountant("Artyom", 35);
+        System.out.println("Accountant before clone ");
+        accountant.printJobTitle();
+        System.out.println("^".repeat(50));
+        Accountant clone;
         try {
-            Accountant accountant = new Accountant("Artyom");
-            Accountant cloneAccountant = (Accountant) accountant.clone();
-            System.out.println("This is original accountant: " + accountant);
-            System.out.println("And this is his clone: " + cloneAccountant);
+            clone = accountant.clone();
+            System.out.println("Clone accountant ");
+            clone.printJobTitle();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("The object cannot be cloned.");
         }
     }
 }
