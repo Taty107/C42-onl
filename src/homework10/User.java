@@ -1,24 +1,27 @@
 package homework10;
 
+import java.util.GregorianCalendar;
 import java.util.Objects;
-import java.util.Random;
 
-public class User implements Cloneable{
+public class User implements Cloneable {
     private final String name;
     private final String surname;
     private final int age;
-    private final int id;
+    private long id;
 
-    public User(String name, String surname,int age, int id){
+    public User(String name, String surname,int age, long id){
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.id = id;
     }
 
-    @Override
-    public User clone() throws CloneNotSupportedException {
-        return (User) super.clone();
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 
     @Override
@@ -40,5 +43,15 @@ public class User implements Cloneable{
     @Override
     public int hashCode() {
         return Objects.hash(name, surname, age, id);
+    }
+
+    @Override
+    protected User clone() throws CloneNotSupportedException {
+        return (User)super.clone();
+    }
+    public User deepClone() throws CloneNotSupportedException {
+        User cloneUser = (User) super.clone();
+        cloneUser.id = this.id;
+        return cloneUser;
     }
 }

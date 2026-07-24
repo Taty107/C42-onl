@@ -1,7 +1,5 @@
 package homework11;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class MyMain {
@@ -11,40 +9,32 @@ public class MyMain {
         String firstString = getInput.nextLine();
         String secondString = getInput.nextLine();
         String thirdString = getInput.nextLine();
-    }
 
-    public static void getLongestAndShortestString(String firstString, String secondString, String thirdString){
-        if (firstString.length() > secondString.length() && firstString.length() > thirdString.length()){
-            System.out.println("This string is the longest: "
-                    + "\n" + firstString + "\nIts length " + firstString.length());
-        } else if (secondString.length() > firstString.length() && secondString.length() > thirdString.length()) {
-            System.out.println("This string is the longest: "
-                    + "\n" + secondString + "\nIts length " + secondString.length());
-        } else if (thirdString.length() > firstString.length() && thirdString.length() > secondString.length()) {
-            System.out.println("This string is the longest: "
-                    + "\n" + thirdString + "\nIts length " + thirdString.length());
-        } else {
-            System.out.println("All string have the same length.");
+        StringHandler stringHandler = new StringHandler(firstString, secondString, thirdString);
+        System.out.println("~".repeat(100));
+        System.out.println("Task 1");
+        System.out.println("The longest string is... " + stringHandler.getLongestString());
+        System.out.println("The shortest string is... " + stringHandler.getShortestString());
+        System.out.println("~".repeat(100));
+        System.out.println("Task 2");
+        System.out.println("Sorted strings: ");
+        String[] sortedStrings = stringHandler.getSortedByLength();
+        for (String string : sortedStrings) {
+            System.out.println(string);
         }
+        System.out.println("~".repeat(100));
+        System.out.println("Task 3");
+        stringHandler.getMediumLengthString();
+        stringHandler.getShortestStringsThenMediumStringLength();
+        System.out.println("~".repeat(100));
+        System.out.println("Task 4");
+        stringHandler.getStringWithUniqueCharacters();
+        System.out.println("~".repeat(100));
+        System.out.println("Task 5");
+        stringHandler.duplicateEachCharacters(firstString);
+        System.out.println("~".repeat(100));
+        System.out.println("Task*");
+        stringHandler.getPalindrome(firstString);
 
-        if (firstString.length() < secondString.length() && firstString.length() < thirdString.length()){
-            System.out.println("This string is the shortest: "
-                    + "\n" + firstString + "\nIts length " + firstString.length());
-        } else if (secondString.length() < firstString.length() && secondString.length() < thirdString.length()) {
-            System.out.println("This string is the shortest: "
-                    + "\n" + secondString + "\nIts length " + secondString.length());
-        } else if (thirdString.length() < firstString.length() && thirdString.length() < secondString.length()) {
-            System.out.println("This string is the shortest: "
-                    + "\n" + thirdString + "\nIts length " + thirdString.length());
-        }
-    }
-
-    public static void regularizeString(String firstString, String secondString, String thirdString){
-        String[] strings = {firstString, secondString, thirdString};
-        Arrays.sort(strings, Comparator.comparingInt(String::length));
-        System.out.println("These are your strings in ascending order:");
-        for (String st : strings){
-            System.out.println(st);
-        }
     }
 }
