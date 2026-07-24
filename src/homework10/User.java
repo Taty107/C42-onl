@@ -1,6 +1,5 @@
 package homework10;
 
-import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class User implements Cloneable {

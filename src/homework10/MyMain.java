@@ -23,14 +23,6 @@ public class MyMain {
     }
 
     public static void cloneUser(){
-        User originUser = new User("Ivan", "Ivanov", 35, 47388734);
-        User cloneUser;
-        try{
-            cloneUser = originUser.deepClone();
-            cloneUser.setId(43576902);
-            System.out.println(cloneUser);
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 }
