@@ -37,7 +37,7 @@ public class MyMain {
                 + "\nMy documents 2354-1367-88, 9800-4456-00"
                 + "\nIf anything happens, call me on the phone +(79)490934784, +(79)490934784, +(67)567290876";
 
-        Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-z]{2,}");
+        Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-z]{2,}");
         Matcher emailMatcher = emailPattern.matcher(text);
         String foundEmails = "";
         while (emailMatcher.find()){
