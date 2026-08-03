@@ -1,0 +1,5 @@
+docnum1d0s9a87sx6 Length document number is not equal to 15 characters
+docnump1k2j Length document number is not equal to 15 characters
+shortqw1e2r3 Length document number is not equal to 15 characters
+docnum00o12wru. String contains special characters
+donummm43334433 String does not start with (docnum)

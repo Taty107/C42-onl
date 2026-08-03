@@ -12,9 +12,6 @@ public class MyMain {
         System.out.println("Task 1");
         readAndWriteFile();
         System.out.println("~".repeat(60));
-        System.out.println("Task*");
-        readingInformationFromInputFile();
-        System.out.println("~".repeat(60));
     }
 
     public static void readAndWriteFile() {
@@ -41,12 +38,6 @@ public class MyMain {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public static void readingInformationFromInputFile(){
-        File file = new File("src/file_doc_num.txt");
-        File fileValidNum = new File("src/valid_doc_num.txt");
-        File fileInvalidNum = new File("src/invalid_doc_num.txt");
     }
 
 }
