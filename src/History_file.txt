@@ -1,0 +1,29 @@
+
+The original decimal number: 22
+Method of converting: array
+Result: 10110
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The original decimal number: 22
+Method of converting: recursive
+Result: 10110
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The original decimal number: 33
+Method of converting: recursive
+Result: 100001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The original decimal number: 99
+Method of converting: array
+Result: 1100011
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The original decimal number: 11
+Method of converting: array
+Result: 1011
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The original decimal number: 44
+Method of converting: recursive
+Result: 101100
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The original decimal number: 33
+Method of converting: array
+Result: 100001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
