@@ -39,6 +39,18 @@ public class MyMain {
         System.out.println("~".repeat(70));
 
         System.out.println("Task*");
+
+        MyCollection<String> name = new MyCollection<>();
+        name.addElement("Artyom");
+        name.addElement("Vitalina");
+        System.out.println(name);
+        System.out.println(name.getElement(1));
+        name.deleteElement(1);
+        System.out.println(name);
+        System.out.println(name.containElement("Vova"));
+        name.removeCollection();
+        System.out.println(name);
+        System.out.println("~".repeat(70));
     }
 
     public static void getNumbersWithoutDuplicates() {
