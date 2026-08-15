@@ -21,6 +21,7 @@ public class MyMain {
         String example2 = "{{[]()}}}}";
         System.out.println("This line is balanced? " + example1 + "\t" + isBalanced(example1));
         System.out.println("This line is balanced? " + example2 + "\t" + isBalanced(example2));
+        System.out.println("~".repeat(70));
     }
 
     public static Map<String, Boolean> wordMultiple(String[] strings){
