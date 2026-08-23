@@ -31,7 +31,7 @@ public class MyCollection<E> {
         if (numMoved > 0) {
             System.arraycopy(elements, index + 1, elements, index, numMoved);
         }
-        elements[size--] = null;
+        elements[--size] = null;
     }
 
     @SuppressWarnings("unchecked")
@@ -45,7 +45,7 @@ public class MyCollection<E> {
             if (element == null) {
                 if (elements[index] == null) return true;
             } else {
-                if (elements.equals(elements[index])) return true;
+                if (element.equals(elements[index])) return true;
             }
         }
         return false;

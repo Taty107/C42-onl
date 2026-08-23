@@ -1,6 +1,6 @@
 package homework2;
 
-public class startJava {
+public class StartJava {
     public static void main(String[] args) {
         calculate();
         sumOfDigitsOne();

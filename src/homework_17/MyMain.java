@@ -42,7 +42,7 @@ public class MyMain {
     }
 
     public static void getPositiveNumbers(int[] numbers) {
-        Predicate<Integer> isPositive = n -> n >= 0;
+        Predicate<Integer> isPositive = n -> n > 0;
         System.out.println("Positive numbers is: ");
         for (int number : numbers) {
             if (isPositive.test(number)) {
